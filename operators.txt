@@ -1,0 +1,126 @@
+===================  OPERATORS ========================
+
+Evaluate the expression in a step by step way based on operator precedence and associativity
+
+1) printf("%d\n",1==5==5);
+Ans: 0
+used to check if its left-hand side operand is equal to right-hand side operand. Since 1 is not equal to 5, so the condition became false and thus printed 0
+2) int i =0;
+   printf("%d %d",i,i++);
+Ans: 1 0
+
+3) int x=5;
+   printf("%d %d %d\n",x++,x++,x++);
+Ans: 7 6 5
+
+4) int x=2;
+   printf("%d   ",++x++);	//increament operators cannot be used with constants and expressions
+   printf("%d\n",x++);
+Ans: Error	 
+
+5) int k=1;
+   printf("%d==1 is ""%s\n",k,k==1?"TRUE":"FALSE");
+Ans: 1==1 is True 
+
+6) int i=5;
+   i=i++ - --i + ++i;
+Ans: 6
+Eplanation: i++= first assign and then increament	--i=first decreament and then assign
+	i=5-5+6
+	
+7) int a=7;
+   a+=a+=a-=6;
+   printf("%d\n",a);
+Ans: 4
+Explanation:a+=a+=(a=7-6)
+a+=(a+=1)		a+=(a=a+1)
+a+=2		a=2+2=4 
+
+8) int x=10,y=5,p,q;
+   p=x>9;
+   q=p||(x=5,y=10);
+   printf("%d %d %d\n",q,x,y);
+Ans:  1 10 5
+
+9) int x=2,y=1;
+   y+=x<<=2;
+   printf("%d %d\n",x,y);
+Ans: 8 9
+Explanation:
+y+=(x=x<<2)	//x<<2=x * 2^2=2*4=8
+y=y+8	y=9
+
+10) int x=2,y=4,z;
+    z=y++*x++|y--;
+    printf("%d\n",z);
+Ans: 
+
+11) int a=5,b=6,c=7,d;
+    d=a&=b&=c&&a;
+    printf("%d\n",d);
+Ans: 0
+Explanation:	d=a&=b&=(7&&5)
+d=a&=b=(b&1)	b=0110&0001=0000
+d=(a&0)		d=0101&0000=0000
+
+12) int i=10;
+    i=(10<10)?(10>=10)?(10<=10)?1:2:3:4;
+    printf("%d\n",i);
+Ans: 4
+    i=(10<10)?(10>=10)?[(10<=10)?1:2]:3:4	//True
+    i=(10<10)?{(10>=10)?1:3}:4		//True
+    i=(10<10)?1:4		//False
+    i=4
+
+13) int a=10,b=20;			
+    a=(a>5||b=6?40:50);
+    printf("%d\n",a);
+Ans: Comilation time Error
+Explanation:  a=(a>5)||b=6?40:50	
+	a=(1||20)=6?40:50
+	a=(1=6?40:50)	//Error: on left side of assignment operator should not be constant value	
+ 
+14) printf("%x\n",-1>>4);
+    printf("%x\n",-1<<4);
+Ans:  ff f0
+-1= 1111 1111=All one's
+1111 1111>>4=FF>>4	//because of sign bit copy mechanism 
+FF<<4=FF/(2^4)=ff/16=f0
+
+15) int x=7;
+    x=(x<<=x%2);
+    printf("%d\n",x);
+Ans: 14
+Expalanation:	x=(x<<=1)		7*(2^1)
+		x=14
+
+16) int a=2,b=5,c=1;
+    printf("%d\n",(b>=a>=c?1:0));
+Ans:1
+
+17) int a=5;
+    a=a-~a +1;
+    printf("%d\n",a);
+Ans: 12
+Explanation: a=a-(~a)+1	a=0000 0101	~a=1111 1010=-6
+	a=(5-(-6))+1=11+1=12
+
+18) a=b=c=1;
+    x=--a||++b*(3-1)/2&&b*(--c/3);
+    printf("%d\n",x);
+Ans: 0
+Explanation:	x=(0||2)*(3-1)/2&&b*(--c/3)
+	x=(2*2)/2&&b*(--c/3)
+	x=4/2&&
+
+19) a=10
+    b = -5
+    c = 2.5
+    printf("%d %d",sizeof(a) + sizeof((++b) *c, b);
+Ans:
+
+20) int i=5;
+    i=i++ - i
+    printf("%d",i)
+Ans: -1
+Explanation:   i++= first assign then increament	i=5-6
