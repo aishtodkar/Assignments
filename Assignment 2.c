@@ -8,25 +8,35 @@ Write your code in this editor and press "Run" button to compile and execute it.
 
 //	Assignment No.:2
 //Q.1
+#include<stdio.h>
+#define val 5
 main()
 {
-    int i,j;
+    int i,j,k;
     printf("Pattern:\n");
     i=1;
-    while(i<=5)
+    while(i<=val)
     {
-        printf(" /");
-        j=1;
-        while(j<i)
+        k=val;
+        while(k>=i)
         {
+            printf(" ");
+            k--;
+        }
+        printf("/");
+        j=0;
+        while(j<(2*i))
+        {
+            if(i==val)
+                printf("_");
+            else
              printf(" ");
-             j++;
+            j++;
         }
         printf("\\\n");
         i++;
     }
 }
-
 
 
 /*
