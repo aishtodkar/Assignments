@@ -31,6 +31,121 @@ main()
     
 }
 */
+/*
+//Q.2.
+#include<stdio.h>
+#include<stdlib.h>
+int get();
+void insert(int*,int);
+void delete(int*,int);
+main()
+{
+    int i,n,*a,pos,op;
+    printf("Enter the number of elements:\n");
+    scanf("%d",&n);
+    a=malloc(sizeof(int)*n);
+    printf("Enter the array elements:\n");
+    for(i=0; i<n; i++)
+        scanf("%d",&a[i]);
+    printf("Enter your choice of operation:\n1.Insert\n2.Delete\n");
+    scanf("%d",&op);
+    switch(op)
+    {
+        case 1: insert(a,n);
+                break;
+        case 2: delete(a,n);
+                break;
+        default:
+                printf("Wrong choice.\n");
+    }
+
+}
+
+int get()
+{
+    int pos;
+    printf("Enter the position:\n");
+    scanf("%d",&pos);
+    return pos;
+}
+
+void insert(int *a, int n)
+{
+    int i,val,pos;  
+    pos=get();
+    if(pos<n+1)
+    {
+        a=realloc(a, sizeof(int)*(n+1));
+        printf("Enter the value to add:%d\n",pos);
+        scanf("%d",&val);
+
+        for(i=n; i>=pos ; i--)
+            a[i]=a[i-1];
+        a[pos]=val;
+        
+        for(i=0; i<n+1; i++)
+            printf("%d\t",a[i]);
+        printf("\n");
+    }
+    else
+    printf("Position is out of array range:\n");
+
+}
+
+void delete(int *a, int n)
+{
+    int i,val,pos; 
+    pos=get();
+    if(pos<n)
+    {
+        a=realloc(a, sizeof(int)*(n-1));
+        for(i=pos; i<n; i++)
+            a[i]=a[i+1];
+            
+        for(i=0; i<n-1; i++)
+            printf("%d\t",a[i]);
+        printf("\n");
+    }
+    else
+    printf("Position is invalid.\n");
+}
+*/
+
+//Q.3
+//counting frequency of elements
+#include<stdio.h>
+#include<stdlib.h>
+main()
+{
+    int *a,n,i,j,k,count=0;
+    printf("Enter the number of elements:\n");
+    scanf("%d",&n);
+    a=malloc(sizeof(int)*n);
+    printf("Enter the elements o an array;\n");
+    for(i=0; i<n; i++)
+        scanf("%d",&a[i]);
+    
+    for(i=0; i<n; i++)
+    {
+        for(j=0; j<i; j++)
+        {
+            if(a[j]==a[i])
+            break;
+        }
+        if(j==i)
+        {
+            for(k=i; k<n; k++)
+            {
+                if(a[i]==a[k])
+                count++;
+            }
+            printf("Element %d presents %d times.\n",a[i],count);
+            count=0;
+        }
+    }
+    
+}
+/*
 //Q.4
 // finding min and max number from Array
 #include <stdio.h>
