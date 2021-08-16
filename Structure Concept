@@ -1,0 +1,30 @@
+/*
+#include<stdio.h>
+struct new
+{
+ //   static int data;
+    int a;
+};
+
+main()
+{
+    struct new v1={5,10};
+    printf("%d\n",v1.a);
+//    printf("%d\n",v1.data); //Error // v1 has no member data
+}
+*/
+#include<stdio.h>
+struct new
+{
+    int num;
+//    func()
+//    {
+//      printf("structure.\n");
+//    }
+};
+main()
+{
+    struct new v1={5};
+    printf("main=%d\n",v1.num);
+    //v1.func();        //Error// v1 has no func() member
+}
