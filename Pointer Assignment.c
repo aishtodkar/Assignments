@@ -129,3 +129,126 @@ void sort_array(int *ary)
         printf("%d\t",ary[i]);
 }
 */
+/*
+//Q.5
+//Add 2d Array
+
+#include<stdio.h>
+#include<stdlib.h>
+void add_matrix(int **,int **,int ,int);
+main()
+{
+    int r1,c1,r2,c2,i,j;
+    int **a,**b;
+printf("Enter the number of rows and columns for 1st matrix:\n");
+scanf("%d%d",&r1,&c1);
+printf("Enter the number of rows and columns for 2nd matrix:\n");
+scanf("%d%d",&r2,&c2);
+if(r1!=r2 && c1!=c2)
+printf("Addition is not possible\n");
+else
+{
+    a=malloc(r1*sizeof(int*));
+    for(i=0; i<r1; i++)
+        a[i]=malloc(c1*sizeof(int));
+    
+    b=malloc(r1*sizeof(int*));
+    for(i=0; i<r1; i++)
+        b[i]=malloc(c1*sizeof(int));
+
+     printf("Enter matrix 1:\n");
+    for(i=0; i<r1; i++)
+        for(j=0; j<c1; j++)
+            scanf("%d",&a[i][j]);
+
+    printf("Enter matrix 2:\n");
+    for(i=0; i<r1; i++)
+        for(j=0; j<c1; j++)
+            scanf("%d",&b[i][j]);
+     
+ add_matrix(a,b,r1,c1);
+}
+
+}
+void add_matrix(int **a,int **b, int r1,int c1)
+{
+    int i,j;
+    
+    printf("matrix 1:\n");
+    for(i=0; i<r1; i++)
+        for(j=0; j<c1; j++)
+            printf("%d\t",a[i][j]);
+    
+    
+    printf("\nmatrix 2:\n");
+    for(i=0; i<r1; i++)
+        for(j=0; j<c1; j++)
+            printf("%d\t",b[i][j]);
+    
+    
+    int c[r1][c1];
+    for(i=0; i<r1; i++)
+        for(j=0; j<c1; j++)
+        c[i][j]=a[i][j]+b[i][j];
+    
+    printf("\nAddition of matrix:\n");
+    for(i=0; i<r1; i++)
+        for(j=0; j<c1; j++)
+        printf("%d\t",c[i][j]);
+    
+    printf("\n");
+}
+*/
+/*
+//Q.6
+//checking sequence
+#include<stdio.h>
+#include<stdlib.h>
+
+int check_sequence(int*, int);
+main()
+{
+    int i,n,*a,res;
+    printf("Enter the number of elements:\n");
+    scanf("%d",&n);
+    a=malloc(sizeof(int)*n);
+    printf("Enter the sequence:\n");
+    for(i=0; i<n; i++)
+        scanf("%d",&a[i]);
+    res=check_sequence(a,n);
+    if(res==1)
+        printf("valid\n");
+    else
+        printf("Invalid\n");
+    
+}
+int check_sequence(int *a, int n)
+{
+    int i,j,temp,count=0;
+
+    for(i=0; i<n; i++)
+    {
+        if(a[i]==temp)
+        continue;
+        
+        temp=a[i];
+        for(j=i; j<n; j++)
+        {
+            if(a[i]==a[j])
+            count++;
+        }
+        if(count==a[i])
+        {
+            count=0;
+            continue;
+        }
+        else
+        break;
+    }
+    if(i==n)
+        return 1;
+    else 
+        return 0;
+    
+}
+*/
