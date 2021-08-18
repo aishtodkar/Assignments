@@ -38,7 +38,7 @@ main()
 {
     char *s;
     int res;
-    s=(char*)malloc((sizeof(char))*40);
+    s=(char*)malloc((sizeof(char))*40);  
     printf("Enter the string:\n");
     scanf("%s",s);
     res=consonants_check(s);
@@ -49,11 +49,8 @@ int consonants_check(char *s)
     int i,count=0;
     for(i=0; s[i]; i++)
     {
-        if((s[i]>='a'&&s[i]<='z')||(s[i]>='A'&&s[i]<='Z'))
-        {
-            if(s[i]!='a'&& s[i]!='e'&& s[i]!='o'&&s[i]!='u'&&s[i]!='i')
+            if(s[i]!='a'&& s[i]!='e'&& s[i]!='o'&&s[i]!='u'&&s[i]!='i')  
             count++;
-        }
     }
  //   printf("%d\n",count);
     return count;
