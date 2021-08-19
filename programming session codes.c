@@ -87,6 +87,21 @@ int character_count(char *s, char ch)
     return count;
 }
 */
+/*
+Program 2 : WAP for scenario let suppose. You hve a 8 bit temperature sensor . 
+In that 0 to 255 data can store.0 indicates -20 and 255 indicates +20 temperature in degree celcius.
+So WAP for it. perform some operation on it and get respective temperature in degree celcius.
+*/
+#include<stdio.h>
+main()
+{
+    unsigned char temp;
+    float deg;
+    printf("Enter the temperature:\n");
+    scanf("%d",&temp);
+    deg=(temp/6.359)-20;
+    printf("Temperature:%.2f degree celcius",deg);
+}
 
 
 
