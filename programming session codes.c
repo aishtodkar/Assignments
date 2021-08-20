@@ -87,6 +87,7 @@ int character_count(char *s, char ch)
     return count;
 }
 */
+//19-08-2021
 /*
 Program 2 : WAP for scenario let suppose. You hve a 8 bit temperature sensor . 
 In that 0 to 255 data can store.0 indicates -20 and 255 indicates +20 temperature in degree celcius.
@@ -103,7 +104,36 @@ main()
     printf("Temperature:%.2f degree celcius",deg);
 }
 
-
+//20-08-2021
+//program to check if a number is even or odd and if even : divide it by 2 and if it is odd : double it 
+//: only bitwise operators to be used : only positive numbers
+/*
+#include<stdio.h>
+main()
+{
+    int num;
+    printf("Enter the number:\n");
+    scanf("%d",&num);
+    
+    if(num&1)
+        num=num<<1;
+    else
+        num=num>>1;
+    printf("Number=%d\n",num);
+}
+*/
+/*
+#include<stdio.h>
+main()
+{
+    int num;
+    printf("Enter the number:\n");
+    scanf("%d",&num);
+    
+    (num&1)?printf("Number=%d",num<<1):printf("Number=%d\n",num>>1);
+    printf("%d\n",num)
+}
+*/
 
 
 
