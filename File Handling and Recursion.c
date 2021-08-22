@@ -70,6 +70,69 @@ main()
 }
 */
 /*
+//Write a C program to count characters, words and lines in a text file
+#include<stdio.h>
+#include<stdlib.h>
+main()
+{
+    FILE *fp;
+    char ch, *word, *line;
+    int count_ch=0, count_word=0, count_line=0;
+    
+    word=(char*)malloc(sizeof(char)*20);
+    line=(char*)malloc(sizeof(char)*50);
+    
+    fp=fopen("file","r");
+    if(fp==0)
+    {
+        printf("File is not present.\n");
+        return 0;
+    }
+    while((ch=fgetc(fp))!=-1)
+        count_ch++;
+        
+    fseek(fp, 0, SEEK_SET);
+    
+    while(fgets(line,50,fp))
+    count_line++;
+    
+    rewind(fp);
+    
+    while(fscanf(fp,"%s", line)!=-1)
+    count_word++;
+    
+    printf("Characters=%d\nWords=%d\nLines=%d\n",count_ch,count_word,count_line);
+}
+*/
+/*
+//WAP to compare two files.
+#include<stdio.h>
+main()
+{
+    FILE *fp,*fd;
+    char ch,ch1;
+    fp=fopen("file","r");
+    fd=fopen("file_1","r");
+    if(fp==0 ||fd==0)
+    {
+        printf("File is not present.\n");
+        return 0;
+    }
+    while(((ch=fgetc(fp))!=-1)&&((ch1=fgetc(fd))!=-1))
+    {
+        if(ch!=ch1)
+        break;
+    }
+    if((fgetc(fp)==-1)&&(fgetc(fd)==-1))
+        printf("File contents are same.\n");
+    else
+        printf("Both are different files.\n");
+    
+    
+}
+*/
+
+/*
 //WAP for copying contents of file1 to file2
 #include <stdio.h>
 main()
