@@ -135,6 +135,117 @@ main()
 }
 */
 
+//26-08-2021
+/*
+//WAP for converting decimal to binary using bitwise
+#include<stdio.h>
+main()
+{
+    int num,pos;
+    printf("Enter the number:\n");
+    scanf("%d",&num);
+    for(pos=31;pos>=0;pos--)
+        printf("%d ",num>>pos&1);
+}
+*/
+/*
+//WAP for finding the sum of digits of the number using recursion
+#include<stdio.h>
+int sum_digit(int num);
+main()
+{
+    int num,sum;
+    printf("Enter the number:\n");
+    scanf("%d",&num);
+    sum=sum_digit(num);
+    printf("Sum of digits:%d\n",sum);
+}
+
+int sum_digit(int num)
+{
+    static int sum=0;
+    if(num)
+    {
+        sum=sum+num%10;
+        num=num/10;
+        sum_digit(num);
+    }
+    else
+    return sum;
+}
+*/
+/*
+//WAP to return multiple values from a function using a pointer
+#include<stdio.h>
+#include<stdlib.h>
+int* multiple_value(int );
+main()
+{
+    int *p,n,i;
+    printf("Enter the number required from function:\n");
+    scanf("%d",&n);
+    p=multiple_value(n);
+    printf("Values from function:\n");
+    for(i=0; i<n; i++)
+    printf("%d\t",p[i]);
+}
+
+int* multiple_value(int n)
+{
+    int *ptr,i;
+    ptr=(int*)malloc(sizeof(int)*n);
+    printf("Enter the 5 values for returning:\n");
+    for(i=0; i<n; i++)
+        scanf("%d",&ptr[i]);
+    return ptr;
+}
+*/
+/*
+// WAP to remove all occuranceof character from string.
+#include<stdio.h>
+#include<stdlib.h>
+main()
+{
+    int i,j;
+    char *str,ch;
+    str=(char*)malloc((sizeof(char))*20);
+    printf("Enter the string:\n");
+    scanf("%s",str);
+    printf("Enter the charcter for deletion:\n");
+    scanf(" %c",&ch);
+    for(i=0; str[i]; i++)
+    {
+        if(str[i]==ch)
+        {
+            for(j=i; str[j]; j++)
+                str[j]=str[j+1];
+            i--;
+        }
+    }
+    printf("%s\n",str);
+}
+*/
+/*
+//WAP to count total zero's and one's in the binary number.
+#include<stdio.h>
+main()
+{
+    int num,c_zero=0,c_one=0,pos;
+    printf("Enter the number:\n");
+    scanf("%d",&num);
+    printf("Binary format of number:\n");
+    for(pos=31; pos>=0; pos--)
+    {
+        printf("%d ", num>>pos&1);
+        if(num>>pos&1)
+        c_one++;
+        else
+        c_zero++;
+    }
+    printf("\nNumber of zero's=%d\n",c_zero);
+    printf("Number of one's=%d\n",c_one);
+}
+*/
 
 
 
