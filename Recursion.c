@@ -128,7 +128,7 @@ void str_rev(char *s, int len)
 
 }
 */
-*/
+
 /*
 //5. Program for checking wheather string is palindrome or not?
 #include<stdio.h>
@@ -193,7 +193,7 @@ int str_pal(char *s, int len)
 	
 }
 */
-*/
+
 /*
 //6. Program for finding first capital letter in the string using recursion.
 #include<stdio.h>
@@ -250,5 +250,5 @@ char str_cap(char *s, int len)
 	else return 0;
 }
 */
-*/
+
 
