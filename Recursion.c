@@ -1,5 +1,54 @@
 
-//fibanocci series
+/*
+//1. converting decimal number into binary using recursion
+#include <stdio.h>
+void dec_binary(int );
+main()
+{
+    int num;
+    printf("Enter the number:\n");
+    scanf("%d",&num);
+    dec_binary(num);
+//    printf("\n");
+//    dec_binary(num);
+}
+
+void dec_binary(int num)
+{
+    static int pos=31;
+    if(pos>=0)
+    {
+        printf("%d ",num>>pos&1);
+        pos--;
+        dec_binary(num);
+    }
+    else
+        pos=31;
+}
+*/
+/*
+//2. program for factorial of number using recursion
+#include<stdio.h>
+int fact(int );
+main()
+{
+    int num,res;
+    printf("Enter the number:\n");
+    scanf("%d",&num);
+    res=fact(num);
+    printf("Factorial of given number=%d\n",res);
+}
+
+int fact(int num)
+{
+    if(num==0)
+        return 1;
+    else
+        return (num*fact(num-1));
+}
+*/
+
+//3. fibanocci series
 #include<stdio.h>
 int fib(int );
 int main()
@@ -21,7 +70,7 @@ int fib(int num)
 	return(fib(num-1)+fib(num-2));
 }
 /*
-//reverse the string
+//4. Program for reversing the string using recursion.
 #include<stdio.h>
 #include<stdlib.h>
 int str_len(char *);
@@ -79,9 +128,9 @@ void str_rev(char *s, int len)
 
 }
 */
-
+*/
 /*
-//check string is palindrome or not?
+//5. Program for checking wheather string is palindrome or not?
 #include<stdio.h>
 #include<stdlib.h>
 int str_len(char *);
@@ -144,8 +193,9 @@ int str_pal(char *s, int len)
 	
 }
 */
+*/
 /*
-//finding first capital letter using string.
+//6. Program for finding first capital letter in the string using recursion.
 #include<stdio.h>
 #include<stdlib.h>
 char str_cap(char*);
@@ -200,5 +250,5 @@ char str_cap(char *s, int len)
 	else return 0;
 }
 */
-
+*/
 
