@@ -111,7 +111,7 @@ int main()
 //diff between mutex and spinlock
 //Assume like we have {7,8,9}; how many subsets we can write lin{7,8} 
 //do all subsets xor operation 
-
+/*
 #include<stdio.h>
 #include<stdlib.h>
 void scan_array(int *, int);
@@ -174,6 +174,109 @@ int xor_subset(int *a, int n)
         temp=temp^p[i];
     return temp;
 }
+*/
 
+//farana's interview questions
+//Inserting elements in double linked list
+/*
+#include <stdio.h>
+#include<stdlib.h>
+	typedef struct double_linked_list
+	{
+		struct double_linked_list *prev;
+		int num;
+		struct double_linked_list *next;
+	}DLL;
+
+	main()
+	{
+		DLL *hp,*p,*temp;
+		int n, i;
+		printf("Enter the number of node:\n");
+		scanf("%d",&n); 
+		hp=malloc(sizeof(DLL));
+		printf("Enter node number:\n");
+		scanf("%d", &hp->num);
+		hp->prev=0;
+		hp->next=0;
+		p=hp;
+		for(i=1; i<n; i++)
+		{
+			temp=malloc(sizeof(DLL));
+			printf("Enter node number:\n");
+			scanf("%d", &temp->num);
+			temp->next=0;
+			p->next=temp;
+			temp->prev=p;
+			p=p->next;
+		}
+		p=hp;
+		printf("Printing a nodes:\n");
+		while(p)
+		{
+			printf("%d\n",p->num);
+			p=p->next;
+		}
+	}
+}
+*/
+//Code for reversing the linked list-- single linked list is used.
+/*
+#include <stdio.h>
+#include<stdlib.h>
+typedef struct single_linked_list	
+{		
+	int num;		
+	struct single_linked_list *next;
+
+}SLL;
+
+	
+main()
+	
+{
+	
+	SLL *hp,*p, *temp;
+	int n, i;
+	printf("Enter the number of node:\n");
+	scanf("%d",&n); 
+	hp=malloc(sizeof(SLL));
+	printf("Enter node number:\n");
+	scanf("%d", &hp->num);
+	hp->next=0;
+	p=hp;
+	for(i=1; i<n; i++)
+	{
+		temp=malloc(sizeof(SLL));
+        printf("Enter node number:\n");
+		scanf("%d", &temp->num);
+		temp->next=0;
+		p->next=temp;
+		p=p->next;
+	}
+	p=hp;
+	printf("Printing a nodes:\n");		
+	while(p)
+	{
+		printf("%d\n",p->num);
+		p=p->next;
+	}
+}
+
+void reverse_link(SLL **p)
+{
+    SLL **ptr, *temp;
+    int c,i;
+    c=count_node(*p);
+    ptr=malloc(sizeof(SLL*)*c);
+    for(i=0,temp=*p; temp; temp=temp->next, i++)
+        ptr[i]=temp;
+    //reversing a link
+    ptr[0]->next=0;
+    for(i=1; i<c; i++)
+        ptr[i]->next=ptr[i-1];
+    *p=ptr[i-1];
+}
+*/
 
 
